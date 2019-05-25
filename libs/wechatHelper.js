@@ -177,7 +177,7 @@ Wechat.prototype.getWechatNoticeData = async function(req) {
     var result,
         wechatDataXml = await utils.getWechatData(req),
         wechatData = await utils.parseXml(wechatDataXml);
-    return result;
+    return wechatData;
 }
 
 //获取微信退款通知信息
@@ -186,7 +186,7 @@ Wechat.prototype.getRefundData = async function(req) {
         wechatData = await this.getWechatNoticeData(req),
         refundDetailXml = utils.getRefundData(wxData.req_info),
         refundData = await utils.parseXml(refundDetailXml);
-    return result;
+    return refundData;
 }
 
 //获取小程序二维码

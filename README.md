@@ -128,7 +128,7 @@ router.use('/wxpay/paynotify',async function paynotify(ctx, next){
     //获取微信推送数据
     var result = await wechatApi.getWechatNoticeData(ctx.req);
     //验证消息是否来自微信
-    var isWxMessage = await Wechat.WechatAuth(result);
+    var isWxMessage = await Wechat.wechatDataAuth(result);
     //通知微信处理结果
     await Wechat.responseSuccess(ctx,"success");//成功
     await Wechat.responseFail(ctx,"fail"); //失败
