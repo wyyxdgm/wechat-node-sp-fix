@@ -37,8 +37,12 @@ Wechat.prototype.login = async function(code) {
 //获取用户信息
 Wechat.prototype.getWechatUserInfo = async function(sessionKey, encryptedData, iv) {
     const pc = new WXBizDataCrypt(this.appId, sessionKey);
-    var result = pc.decryptData(encryptedData, iv);
-    return result;
+    try {
+        var result = pc.decryptData(encryptedData, iv);
+        return result;
+    } catch (err) {
+        await Promise.reject(err)
+    }
 }
 
 //获取微信token
