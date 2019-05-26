@@ -36,8 +36,8 @@ Wechat.prototype.login = async function(code) {
 
 //获取用户信息
 Wechat.prototype.getWechatUserInfo = async function(sessionKey, encryptedData, iv) {
-    const pc = new WXBizDataCrypt(this.appId, sessionKey),
-        result = pc.decryptData(encryptedData, iv);
+    const pc = new WXBizDataCrypt(this.appId, sessionKey);
+    var result = pc.decryptData(encryptedData, iv);
     return result;
 }
 
@@ -69,7 +69,6 @@ Wechat.prototype.unifiedOrder = async function(options) {
         xml,
         response;
     params.nonce_str = params.nonce_str || utils.getNonceStr();
-    result;
     params.sign = await utils.getSign(params, this.payKey);
     xml = utils.toXml(params);
     response = await wechatService.unifiedorder(xml);
