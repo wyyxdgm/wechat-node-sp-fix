@@ -41,7 +41,7 @@ Wechat.prototype.getWechatUserInfo = async function(sessionKey, encryptedData, i
         var result = pc.decryptData(encryptedData, iv);
         return result;
     } catch (err) {
-        await Promise.reject(err)
+        await Promise.reject('解码失败')
     }
 }
 

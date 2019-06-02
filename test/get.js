@@ -4,11 +4,21 @@ let wechatApi = new WeChatApi({
 	appSecret: 'CONFIG.appSecret'
 });
 
-let sessionKey = 'HGdhbfevicV8ufR1qE//3A==';
-let encryptedData = "4s841WFYtWakT2EwfFb5tv1MO5XUo1/mR03zGCoGpjX/1YoPvarJYpBgufp7fwsPL0wny92q4ZZsLhPwEUI3C1QDsZMQLfv1yzvrBY/gsYsG8mJQQhFL81/zOajQrok1guRa0SElRMUt6x8XwgYCxnt7bSc3bfm2bwqK5HtjEljhqJcZKvyE4GDH/IoziTM9ffy2hOjJJIa3KcZGiwseCxqk1nXq/pc7xDs9in+YlXcbZJyIcEWOxM5mXHuI6sJvzZCTHMDzTLgIDEj8PDgDo+NdHZ8hsojf0J58G3YFNsRJJuzVL5k0ZYAib9ZEm0Z9efMdo7J4Sw5nckdfj/Psqu7ZbcNtLE+HPierGNkQOW66OVHfbuTvl2f0MEPzloqNa0HoDUklAJynh5MlfGMObjyHyU9yQAp4OLR7f5lhbR1fCaZW6bXhn8n7udkPaA1aOvoU9nwLLtmwLpMcKiXwnw==";
-let iv = "3yKH3kqlXLCBmYoQAkOFzA==";
+let data = {
+	"session_key": "wcdO+5PM+rJddHWYyiyAvA==",
+	"encryptedData": "Zz64ATAfLC+sH8PveUq5brBqieiVYHkIY8o3d7wuBFFQ6IbaJjiUn+xmTY43OfdsSk8r8Kv2phavi61XGtAfFaGczW/FATMVUTIN2sT9+K3bWI/Y7BCBFPAXmXZZjSNiNQgnOM5EpevqLJ/PIu0pQPdJKQBUhDXNdhaEgK4rnX5Sfj71nNLtACdKoA13nx4XN3JKGYH1MnFHy7e9fkt6P6dlPF704gTkUVCrV//LlAFOR8T7akASylLGTw8/1Zy5Q2o3t240KO4/Dz3KU5jc0AyhjjC/xj0jG4mg6fyvK3URq5YjbhbkdyyVOSwH+IHV+qM8+j9VB1AnYideODvYHRW18baK3qLxPhEaAV2f9Q8h+q5RtxhGPMVFwOYjeQViyfy8R9GDRMeXLRzzY7aUukcE80uj51VOrORSgCeCWZnSPO0P2+x3thPaGOCo4ukvlbwoC9MvmiEx2F0kMtgMiA==",
+	"iv": "klY4i+HWuNy1dPZxtvA8NA==",
+	"level": "info",
+	"message": "on_login-2--------before wechatApi.getWechatUserInfo"
+}
 
-wechatApi.getWechatUserInfo(sessionKey, encryptedData, iv)
+let {
+	session_key,
+	encryptedData,
+	iv
+} = data;
+
+wechatApi.getWechatUserInfo(session_key, encryptedData, iv)
 	.then(res => {
 		console.log('res');
 		console.log(res);
