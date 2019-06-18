@@ -28,6 +28,9 @@ const wechatService = {
     sendMiniProgramTemplate: function (token, data) {
         return axios.post(`${commonBaseUrl}/cgi-bin/message/wxopen/template/send?access_token=${token}`, data);
     },
+    sendUniformTemplate: function (token, data) {
+        return axios.post(`${commonBaseUrl}/cgi-bin/message/wxopen/template/uniform_send?access_token=${token}`, data);
+    },
     sendWechatTemplate: function (token, data) {
         return axios.post(`${commonBaseUrl}/cgi-bin/message/template/send?access_token=${token}`, data);
     },

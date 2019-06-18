@@ -1,6 +1,6 @@
 {
   "name": "wechat-node-sp-fix",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Node.js 微信小程序及微信公众平台 API",
   "main": "index.js",
   "scripts": {

@@ -57,6 +57,12 @@ Wechat.prototype.sendMiniProgramTemplate = async function(token, data) {
     return result;
 }
 
+// 下发小程序和公众号统一的服务消息
+Wechat.prototype.sendUniformTemplate = async function(token, data) {
+    var result = await wechatService.sendUniformTemplate(token, data);
+    return result;
+}
+
 //发送公众号模板消息
 Wechat.prototype.sendWechatTemplate = async function(token, data) {
     var result = await wechatService.sendWechatTemplate(token, data);
